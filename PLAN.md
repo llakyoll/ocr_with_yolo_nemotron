@@ -223,7 +223,10 @@ ocr_project/
         └── annotated.mp4
 ```
 
-`data/`, `runs/`, model agirliklari ve secret dosyalari Git'e eklenmemelidir.
+`runs/`, model agirliklari ve secret dosyalari Git'e eklenmemelidir. Kaynak
+videolar `data/input/` altinda Git LFS ile surumlenebilir; GitHub LFS depolama
+ve bant genisligi kotalari izlenmeli, buyuk veya sik degisen ham veri setleri
+gerektiginde harici obje depolamaya tasinmalidir.
 
 ## 11. Yapilandirma Taslagi
 

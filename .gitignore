@@ -1,0 +1,21 @@
+# Pipeline outputs and OCR artifacts
+runs/
+
+# Model weights
+models/
+*.pt
+*.onnx
+*.engine
+
+# Secrets and local environments
+.env
+.env.*
+!.env.example
+.venv/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Private annotations
+data/ground_truth/*.private.*
