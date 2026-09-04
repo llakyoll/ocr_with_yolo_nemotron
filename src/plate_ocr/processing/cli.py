@@ -41,3 +41,7 @@ def main(arguments: Sequence[str] | None = None) -> int:
     print(f"Run directory: {result.run_dir}")
     print(f"Frames: {result.frame_count}; detections: {result.detection_count}; OCR errors: {result.ocr_error_count}")
     return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
