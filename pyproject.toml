@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plate-ocr"
+version = "0.1.0"
+description = "License plate detection and OCR pipeline"
+requires-python = ">=3.11"
+dependencies = [
+    "huggingface-hub>=1.5,<2",
+    "numpy>=1.26,<3",
+    "opencv-python>=4.10,<5",
+    "onnxruntime-gpu>=1.26,<1.27",
+    "ultralytics>=8.3,<9",
+]
+
+[project.scripts]
+plate-ocr-detect = "plate_ocr.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

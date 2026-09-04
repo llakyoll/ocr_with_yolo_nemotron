@@ -16,6 +16,7 @@ models/
 # Python-generated files
 __pycache__/
 *.py[cod]
+*.egg-info/
 
 # Private annotations
 data/ground_truth/*.private.*
