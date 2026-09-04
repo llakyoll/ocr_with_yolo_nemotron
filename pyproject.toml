@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "License plate detection and OCR pipeline"
 requires-python = ">=3.11"
 dependencies = [
+    "httpx>=0.28,<1",
     "huggingface-hub>=1.5,<2",
     "numpy>=1.26,<3",
     "opencv-python>=4.10,<5",
@@ -17,6 +18,7 @@ dependencies = [
 
 [project.scripts]
 plate-ocr-detect = "plate_ocr.cli:main"
+plate-ocr-ocr = "plate_ocr.ocr.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10"]

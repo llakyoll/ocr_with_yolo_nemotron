@@ -108,3 +108,12 @@ docker compose stop nemotron-ocr
 ```
 
 Model ağırlıkları `.nim-cache/` altında kalır ve Git'e eklenmez.
+
+NIM hazır olduktan sonra mevcut detection run'ını OCR ile işleyin:
+
+```bash
+plate-ocr-ocr --run runs/20260904T073711618886Z
+```
+
+Komut `ocr_results.jsonl` ve `raw_ocr/` üretir; kaynak `detections.jsonl`
+değişmeden kalır.
