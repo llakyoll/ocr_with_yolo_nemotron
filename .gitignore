@@ -18,6 +18,9 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
+# Local NVIDIA NIM model and compilation cache
+.nim-cache/
+
 # Private annotations
 data/ground_truth/*.private.*
 

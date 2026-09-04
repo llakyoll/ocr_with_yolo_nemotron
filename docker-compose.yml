@@ -1,0 +1,19 @@
+services:
+  nemotron-ocr:
+    image: ${NIM_IMAGE}
+    container_name: nemotron-ocr-v2
+    restart: unless-stopped
+    gpus: all
+    shm_size: 16gb
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      NGC_API_KEY: ${NGC_API_KEY:-}
+      NIM_ENGINE_MODEL_DOWNLOAD_PROVIDER: ngc
+      NIM_ENGINE_MODEL_NAME: nvidia/nemotron-ocr-v2
+      NIM_ENGINE_MODEL_VARIANT: multilingual
+      NIM_ENGINE_DEVICES: "0"
+    volumes:
+      - "${NIM_CACHE_DIR}/cache:/opt/cache"
+      - "${NIM_CACHE_DIR}/weights:/model"
