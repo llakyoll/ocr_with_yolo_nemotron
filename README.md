@@ -96,6 +96,7 @@ servisi başlatın:
 ```bash
 set -a; . ./.env; set +a
 printf '%s' "$NGC_API_KEY" | docker login nvcr.io --username '$oauthtoken' --password-stdin
+mkdir -p "$NIM_CACHE_DIR/cache" "$NIM_CACHE_DIR/weights"
 docker compose up -d nemotron-ocr
 curl --fail --retry 60 --retry-delay 5 http://127.0.0.1:8000/v1/health/ready
 ```
@@ -107,7 +108,9 @@ docker compose logs -f nemotron-ocr
 docker compose stop nemotron-ocr
 ```
 
-Model ağırlıkları `.nim-cache/` altında kalır ve Git'e eklenmez.
+Model ağırlıkları `.nim-cache/` altında kalır ve Git'e eklenmez. Cache
+dizinlerini Compose'tan önce oluşturmak, container'ın bunları mevcut kullanıcı
+sahipliğinde kullanmasını sağlar.
 
 NIM hazır olduktan sonra mevcut detection run'ını OCR ile işleyin:
 
