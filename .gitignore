@@ -19,3 +19,6 @@ __pycache__/
 
 # Private annotations
 data/ground_truth/*.private.*
+
+# Full source video is kept locally; the repository contains a shorter sample.
+plate_dataset_video.mp4
