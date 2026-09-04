@@ -19,6 +19,7 @@ dependencies = [
 [project.scripts]
 plate-ocr-detect = "plate_ocr.cli:main"
 plate-ocr-ocr = "plate_ocr.ocr.cli:main"
+plate-ocr-process-video = "plate_ocr.processing.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10"]

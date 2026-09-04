@@ -120,3 +120,14 @@ plate-ocr-ocr --run runs/20260904T073711618886Z
 
 Komut `ocr_results.jsonl` ve `raw_ocr/` üretir; kaynak `detections.jsonl`
 değişmeden kalır.
+
+## Uçtan uca anotasyonlu video
+
+NIM hazır olduğunda videoyu baştan tespit ve OCR ile işleyip sessiz MP4 üretin:
+
+```bash
+plate-ocr-process-video --video data/input/sample_plate_video.mp4 --model models/license-plate-finetune-v1l.onnx
+```
+
+Yeni `runs/<UTC_run_id>/` dizini crop'ları, JSONL sonuçlarını, ham OCR yanıtlarını
+ve plaka kutuları/OCR metinleri işlenmiş sessiz `annotated.mp4` dosyasını içerir.
